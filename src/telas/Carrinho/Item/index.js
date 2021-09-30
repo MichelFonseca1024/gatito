@@ -1,8 +1,8 @@
-import React, { useState } from "react"
-import { Text, TouchableOpacity, View } from "react-native"
-import Botao from "../../../components/Botao/index.js"
-import CampoInteiro from "../../../components/CampoInteiro"
-import estilos from "./estilos"
+import React, { useState } from 'react'
+import { Text, View } from 'react-native'
+import Botao from '../../../components/Botao/index.js'
+import CampoInteiro from '../../../components/CampoInteiro'
+import estilos from './estilos'
 
 export default function Item({
   nome,
@@ -28,9 +28,9 @@ export default function Item({
         <Text style={estilos.nome}>{nome}</Text>
         <Text style={estilos.descricao}>{descricao}</Text>
         <Text style={estilos.preco}>
-          {Intl.NumberFormat("pt-BR", {
-            style: "currency",
-            currency: "BRL",
+          {Intl.NumberFormat('pt-BR', {
+            style: 'currency',
+            currency: 'BRL',
           }).format(preco)}
         </Text>
       </View>
@@ -49,15 +49,15 @@ export default function Item({
           <View style={estilos.valor}>
             <Text style={estilos.descricao}>Total: </Text>
             <Text style={estilos.preco}>
-              {Intl.NumberFormat("pt-BR", {
-                style: "currency",
-                currency: "BRL",
+              {Intl.NumberFormat('pt-BR', {
+                style: 'currency',
+                currency: 'BRL',
               }).format(total)}
             </Text>
           </View>
         </View>
 
-        <Botao valor="Remover ao Carrinho" acao={""} />
+        <Botao valor="Remover ao Carrinho" acao={''} />
       </View>
       <View style={estilos.divisor}></View>
     </>
