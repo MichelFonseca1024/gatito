@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import { Text, TouchableOpacity, View } from "react-native"
-import Botao from "../../../components/botao.js"
+import Botao from "../../../components/Botao/index.js"
 import CampoInteiro from "../../../components/CampoInteiro"
 import estilos from "./estilos"
 
