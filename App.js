@@ -1,14 +1,14 @@
-import React from "react"
-import "intl"
-import "intl/locale-data/jsonp/pt-BR"
+import React from 'react'
+import 'intl'
+import 'intl/locale-data/jsonp/pt-BR'
 
-import Routes from "./src/routes"
-import TelaPadrao from "./src/components/TelaPadrao"
+import Routes from './src/routes'
+import ScreenDefault from './src/components/ScreenDefault'
 
 export default function App() {
   return (
-    <TelaPadrao>
+    <ScreenDefault>
       <Routes />
-    </TelaPadrao>
+    </ScreenDefault>
   )
 }
