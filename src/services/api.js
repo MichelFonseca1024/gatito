@@ -18,12 +18,6 @@ const api = {
     },
     delete(url) {
         return axiosInstance.delete(url)
-    },
-    login(body) {
-        return axiosInstance.post('auth/login', body)
-    },
-    verifyToken(credentials) {
-        return axiosInstance.post('auth/refresh-token', credentials)
     }
 }
 

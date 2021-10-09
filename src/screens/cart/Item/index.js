@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Text, View } from 'react-native'
+import { Alert, Text, View } from 'react-native'
 import Button from '../../../components/Button'
 import IntInput from '../../../components/IntInput'
 import { api } from '../../../services/api'
@@ -29,7 +29,7 @@ export default function Item({
             const r = await api.delete(
                 `/cart/remove-to-cart/user/2/product/${productId}`
             )
-            console.log(r)
+            Alert.alert('Sucesso', 'Produto removido do carrinho')
         } catch (err) {
             console.log(err)
         }
@@ -72,12 +72,7 @@ export default function Item({
                     </View>
                 </View>
 
-                {/* <Button
-          value="Remover ao Carrinho"
-          action={() => {
-            console.log("fazer chamada a api")
-          }}
-        /> */}
+                
                 <Button
                     value="Remover do Carrinho"
                     action={() => removeToCart(id)}
