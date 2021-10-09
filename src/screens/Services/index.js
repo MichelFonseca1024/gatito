@@ -1,56 +1,40 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useState } from 'react'
 
-import { FlatList } from "react-native"
-import Item from "./Item"
-import { api } from "../../services/api"
-
-// const S1ervices = [
-//   {
-//     id: 1,
-//     name: "Banho",
-//     price: 79.9,
-//     description: "NÃO DE BANHO NO SEU GATO! Mas se precisar nós damos.",
-//   },
-//   {
-//     id: 2,
-//     name: "Vacina V4",
-//     price: 89.9,
-//     description: "Uma dose da vacina V4. Seu gato precisa de duas.",
-//   },
-//   {
-//     id: 3,
-//     name: "Vacina Antirrábica",
-//     price: 99.9,
-//     description:
-//       "Uma dose da vacina antirrábica. Seu gato precisa de uma por ano.",
-//   },
-// ]
+import { FlatList } from 'react-native'
+import Item from './Item'
+import { api } from '../../services/api'
 
 export default function Services() {
-  const [services, setServices] = useState([])
+    const [services, setServices] = useState([])
+    const [isLoading, setIsLoading] = useState(true)
 
-  useEffect(() => {
     async function getServices() {
-      try {
-        const { data } = await api.get("products")
+        setIsLoading(true)
+        try {
+            const { data } = await api.get('/products')
 
-        setServices(data.data)
-      } catch (err) {
-        console.log(err)
-      }
+            setServices(data.data)
+        } catch (err) {
+            console.log(err)
+        } finally {
+            setIsLoading(false)
+        }
     }
 
-    getServices()
-  }, [])
+    useEffect(() => {
+        getServices()
+    }, [])
 
-  return (
-    <>
-      <FlatList
-        data={services}
-        removeClippedSubviews={false}
-        renderItem={({ item }) => <Item {...item} />}
-        keyExtractor={({ id }) => String(id)}
-      />
-    </>
-  )
+    return (
+        <>
+            <FlatList
+                data={services}
+                onRefresh={getServices}
+                refreshing={isLoading}
+                removeClippedSubviews={false}
+                renderItem={({ item }) => <Item {...item} />}
+                keyExtractor={({ id }) => String(id)}
+            />
+        </>
+    )
 }
