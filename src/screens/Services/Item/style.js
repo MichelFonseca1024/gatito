@@ -1,32 +1,32 @@
-import { StyleSheet } from 'react-native';
-import { cores } from '../../../estilos';
+import { StyleSheet } from 'react-native'
+import { colors } from '../../../style'
 
 export default StyleSheet.create({
-  informacao: {
-    padding: 24
+  information: {
+    padding: 24,
   },
-  nome: {
-    color: cores.laranja,
+  name: {
+    color: colors.orange,
     fontWeight: 'bold',
     fontSize: 16,
   },
-  calculo: {
-    color: cores.escuro,
+  calculation: {
+    color: colors.black,
     fontSize: 14,
     marginVertical: 8,
   },
-  preco: {
-    color: cores.roxo,
+  price: {
+    color: colors.purple,
     fontSize: 16,
     fontWeight: 'bold',
     textAlign: 'right',
   },
-  divisor: {
+  divider: {
     marginHorizontal: 24,
     borderBottomWidth: 1,
-    borderBottomColor: cores.cinza,
+    borderBottomColor: colors.gray,
   },
-  carrinho: {
+  cart: {
     paddingHorizontal: 24,
     paddingBottom: 24,
     flexDirection: 'row',
@@ -34,18 +34,18 @@ export default StyleSheet.create({
     alignItems: 'center',
     flexWrap: 'wrap',
   },
-  valor: {
+  value: {
     flexDirection: 'row',
     alignItems: 'center',
     marginBottom: 10,
     flexWrap: 'wrap',
   },
-  descricao: {
-    color: cores.escuro,
+  description: {
+    color: colors.black,
     fontSize: 16,
     marginRight: 8,
   },
-  quantidade: {
+  quantity: {
     width: 42,
-  }
-});
+  },
+})
